@@ -1,0 +1,58 @@
+<app-header></app-header>
+<div class="header">
+  <h1 class="text-light text-center">Webicon blogs</h1>
+</div>
+<div class="contanier text-light d-flex justify-content-center ">
+<div class="row bg-secondary mx-md-n5">
+  <div class="col-2">
+    <img src={{career}} width="50" height="60">
+    <p>Career</p>
+  </div>
+  <div class="col-2">
+    <img src={{emotional}} width="50" height="60">
+    <p>Emotional Wellness</p>
+  </div>
+  <div class="col-2">
+    <img src={{mediation}} width="50" height="60">
+    <p>Meditation</p>
+  </div>
+  <div class="col-2">
+    <img src={{menta}} width="50"  height="60">
+    <p>Mental Wellness</p>
+  </div>
+  <div class="col-2">
+    <img src={{motivation}} width="50" height="60">
+    <p>Motivation </p>
+  </div>
+  <div class="col-2">
+    <img src={{personality}} width="50" height="60">
+    <p>Personality Development</p>
+  </div>
+</div>
+</div>
+<div class="container">
+  <div class="row d-flex justify-content-center">
+<div class="col-md-4 my-4 d-flex align-items-stretch" *ngFor="let blog of blogs">
+  <mat-card class="card">
+    <img mat-card-image [ngStyle]="{'height':'150px', 'width':'fit'}" src="{{blog.pic}}" alt ="{{blog.name}}">
+    <mat-card-header>
+      <mat-card-title>
+        <h1 class="text-succes">{{blog.name}}</h1>
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{blog.author}}
+      </mat-card-subtitle>
+      <br>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{blog.description}}</p>
+    </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="accent" class="btn-primary">see more</button>
+  </mat-card-actions>
+  </mat-card>
+</div>
+</div>
+</div>
+<app-footer></app-footer>

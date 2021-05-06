@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="container" [ngStyle] = "{'background-image': getUrl(), 'background-repeat': 'no-repeat','position':'center', 'height':'400px', 'background-size': '100% 400px'}">
+  <div class="sub">
+    <h2 class="text-danger">Upcoming Webinars</h2>
+    <button mat-raised-button color="accent">Register</button>
+  </div>
+</div>
+<h2 class="text-info">Previous webinars</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6  d-flex align-items-stretch" *ngFor="let webinar of webinars">
+      <mat-card class="card">
+        <youtube-player
+          videoId={{webinar.v}}
+          suggestedQuality="highres"
+          [height]="250"
+          [width]="450"
+          [startSeconds]="4"
+          [endSeconds]="8">
+          </youtube-player>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
